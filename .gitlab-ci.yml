@@ -1,0 +1,14 @@
+stages:
+- build  
+
+build_job:
+stage: build
+only:
+- branches
+script:
+- 'cd 1laba_2'
+- '"C:\Users\nikdo\Nuget\nuget.exe" restore'
+- '"C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\msbuild.exe" 1laba_2.sln'
+artifacts:
+paths:
+- '1laba_2\1laba_2\bin\Debug\1laba_2.exe'
